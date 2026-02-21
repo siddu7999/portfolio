@@ -649,7 +649,7 @@ h3 {
 
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -707,7 +707,8 @@ h3 {
 }
 
 .about-stat-card:hover .stat-detail,
-.about-stat-card:focus-visible .stat-detail {
+.about-stat-card:focus-visible .stat-detail,
+.about-stat-card.is-open .stat-detail {
   opacity: 1;
   max-height: 120px;
   transform: translateY(0);
@@ -855,18 +856,6 @@ h3 {
 .reveal-delay.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-@media (hover: none) {
-  .about-stat-card {
-    cursor: default;
-  }
-
-  .stat-detail {
-    opacity: 1;
-    max-height: 140px;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 990px) {

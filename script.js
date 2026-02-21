@@ -106,6 +106,24 @@ if (moodSwitch && moodAvatar) {
   });
 }
 
+const aboutStatCards = Array.from(document.querySelectorAll(".about-stat-card"));
+if (aboutStatCards.length > 0) {
+  aboutStatCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const hoverCapable = window.matchMedia("(hover: hover)").matches;
+      if (hoverCapable) {
+        return;
+      }
+
+      const willOpen = !card.classList.contains("is-open");
+      aboutStatCards.forEach((item) => item.classList.remove("is-open"));
+      if (willOpen) {
+        card.classList.add("is-open");
+      }
+    });
+  });
+}
+
 const reveals = document.querySelectorAll(".reveal, .reveal-delay");
 const observer = new IntersectionObserver(
   (entries) => {
